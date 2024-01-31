@@ -73,12 +73,70 @@
 
 # Домашнее задание №6
 
-ch = [int(input("Введите число: ")) for i in range(int(input("Введите количество чисел последовательности: ")))]
-k = int(input("Введите индекс: " '\n' "k = "))
-c = int(input("Введите число, которое хотите добавить: " '\n' "c = "))
-ch.insert(k, c)
-print(ch)
-
-
+# ch = [int(input("Введите число: ")) for i in range(int(input("Введите количество чисел последовательности: ")))]
+# k = int(input("Введите индекс: " '\n' "k = "))
+# c = int(input("Введите число, которое хотите добавить: " '\n' "c = "))
+# ch.insert(k, c)
+# print(ch)
 
 # Домашнее задание №7
+
+# from math import sqrt, pi
+#
+# print("1-треугольник, 2-прямоугольник, 3-круг")
+# fig = input("Выберите фигуру: ")
+# if fig == '1':
+#     print("Длины сторон треугольника:")
+#     a = float(input("a = "))
+#     b = float(input("b = "))
+#     c = float(input("c = "))
+#     p = (a + b + c) / 2
+#     s = sqrt(p * (p - a) * (p - b) * (p - c))
+#     print("Площадь: %.2f" % s)
+# elif fig == '2':
+#     print("Длина сторон прямоугольника:")
+#     a = float(input("a = "))
+#     b = float(input("b = "))
+#     print("Площадь: %.2f" % (a * b))
+# elif fig == '3':
+#     r = float(input("Радиус круга R = "))
+#     print("Площадь: %.2f" % (pi * r ** 2))10
+
+# else:
+#     print("Ошибка ввода")
+
+# Домашнее задание №8
+
+# from math import sqrt, pi
+#
+# fig = input("1-треугольник, 2-прямоугольник, 3-круг: ")
+# def triangle(a, b, c):
+#     p = (a + b + c) / 2
+#     return sqrt(p * (p - a) * (p - b) * (p - c))
+# def rectangle(a, b):
+#     return a * b
+# def circle(r):
+#     return pi * r ** 2
+# if fig == '1':
+#     AB = float(input("Первая сторона: "))
+#     BC = float(input("Вторая сторона: "))
+#     CA = float(input("Третья сторона: "))
+#     print("Площадь треугольника: %.2f" % triangle(AB, BC, CA))
+# elif fig == '2':
+#     l = float(input("Длина: "))
+#     w = float(input("Ширина: "))
+#     print("Площадь прямоугольника: %.2f" % rectangle(l, w))
+# elif fig == '3':
+#     rad = float(input("Радиус: "))
+#     print("Площадь круга: %.2f" % circle(rad))
+# else:
+#     print("Ошибка ввода")
+
+# Домашнее задание №9
+
+# ещё в работе
+
+
+# Домашнее задание №10
+
+print("Ссылка с одной строкой кода для GitHub")
