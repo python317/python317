@@ -896,8 +896,15 @@
 # print(second)
 
 
-print("Hello")
+# print("Hello")
+#
+#
+#
+# print("Данные для лрбавления на гитхаб")
 
-
-
-print("Данные для лрбавления на гитхаб")
+# s = ['ab_1', 'ac_2', 'bc1', 'bc_2']
+# # a = [x for x in s if 'a' not in x]
+# a = ['A' + x[1:] if x[0] == 'a' else 'B' + x[1:] for x in s]
+#
+# a = ['A' + x[1:] if x[0] == 'a' else 'B' + x[1:] for x in s if x[1] == 'c']
+# print(a)
