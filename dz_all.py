@@ -130,17 +130,31 @@
 
 # Домашнее задание №9
 
-from random import randint
-
-x = tuple(randint(0, 9) for i in range(10))
-print(x)
-y = []
-for i in x:
-    if i not in y:
-        y.append(i)
-for i in y:
-    print("Количество ", i, "=", x.count(i))
+# from random import randint
+#
+# x = tuple(randint(0, 9) for i in range(10))
+# print(x)
+# y = []
+# for i in x:
+#     if i not in y:
+#         y.append(i)
+# for i in y:
+#     print("Количество ", i, "=", x.count(i))
 
 # Домашнее задание №10
 #
 # print("Ссылка с одной строкой кода для GitHub")
+
+# Домашнее задание №11
+
+mat = {"Матвей", "Евгения", "Михаил", "Максим", "Наталья"}
+physic = {"Максим", "Матвей", "Александр"}
+
+all = mat | physic
+print(all)
+
+victory = mat & physic
+print(victory)
+
+mat = victory
+print(mat)
