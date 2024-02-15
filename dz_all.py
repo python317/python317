@@ -147,14 +147,35 @@
 
 # Домашнее задание №11
 
-mat = {"Матвей", "Евгения", "Михаил", "Максим", "Наталья"}
-physic = {"Максим", "Матвей", "Александр"}
+# mat = {"Матвей", "Евгения", "Михаил", "Максим", "Наталья"}
+# physic = {"Максим", "Матвей", "Александр"}
+#
+# all = mat | physic
+# print(all)
+#
+# victory = mat & physic
+# print(victory)
+#
+# mat = victory
+# print(mat)
 
-all = mat | physic
-print(all)
+# Домашнее задание №12
 
-victory = mat & physic
-print(victory)
+sales = {'John': {'N': 3056, 'S': 8463, 'E': 8441, 'W': 2694},
+         'Tom': {'N': 4832, 'S': 6786, 'E': 4737, 'W': 3612},
+         'Anne': {'N': 5239, 'S': 4802, 'E': 5820, 'W': 1859},
+         'Fiona': {'N': 3904, 'S': 3645, 'E': 8821, 'W': 2451}}
+for x in sales:
+    print(x)
+    for y in sales[x]:
+        print("\t", y, ":", sales[x][y])
 
-mat = victory
-print(mat)
+person = input("Имя: ")
+region = input("Регион: ")
+print(sales[person][region])
+new_data = int(input("Новое значение: "))
+sales[person][region] = new_data
+print(sales[person])
+
+# Елена Анатольевна, учитывая что python учитывает регистр, соответсвенно John не равно john, если возможность
+# пользователю вводить данные без учета регистра? Как это сделать?
