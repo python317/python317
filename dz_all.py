@@ -182,17 +182,31 @@
 
 # Домашнее задание №13
 
-students = {}
-n = int(input("Количество студентов: "))
-s = 0
-for i in range(n):
-    student_name = input(str(i + 1) + "-й студент: ")
-    point = int(input("Балл: "))
-    students[student_name] = point
-    s += point
-    avrg = s / n
+# students = {}
+# n = int(input("Количество студентов: "))
+# s = 0
+# for i in range(n):
+#     student_name = input(str(i + 1) + "-й студент: ")
+#     point = int(input("Балл: "))
+#     students[student_name] = point
+#     s += point
+#     avrg = s / n
+#
+# print("Средний балл: %.0f. Студенты с баллом выше среднего: " % avrg)
+# for i in students:
+#     if students[i] > avrg:
+#         print(i)
 
-print("Средний балл: %.0f. Студенты с баллом выше среднего: " % avrg)
-for i in students:
-    if students[i] > avrg:
-        print(i)
+
+# Домашнее задание №14
+
+def outer(a,b,c):
+    def inner(i,j):
+        return i*j
+
+    s = 2 * (inner(a,b) + inner(a, c) +inner(b,c))
+    return s
+
+print(outer(2,4,6))
+print(outer(5,8,2))
+print(outer(1,6,8))
