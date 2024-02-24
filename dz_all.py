@@ -200,13 +200,17 @@
 
 # Домашнее задание №14
 
-def outer(a,b,c):
-    def inner(i,j):
-        return i*j
+# def outer(a,b,c):
+#     def inner(i,j):
+#         return i*j
+#
+#     s = 2 * (inner(a,b) + inner(a, c) +inner(b,c))
+#     return s
+#
+# print(outer(2,4,6))
+# print(outer(5,8,2))
+# print(outer(1,6,8))
 
-    s = 2 * (inner(a,b) + inner(a, c) +inner(b,c))
-    return s
+# Домашнее задание №15
 
-print(outer(2,4,6))
-print(outer(5,8,2))
-print(outer(1,6,8))
+print(list(filter(lambda slovo: slovo == slovo[::-1], ('madam', 'fire', 'tomato', 'book', 'kiosk', 'mom'))))
