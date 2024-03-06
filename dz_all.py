@@ -213,4 +213,51 @@
 
 # Домашнее задание №15
 
-print(list(filter(lambda slovo: slovo == slovo[::-1], ('madam', 'fire', 'tomato', 'book', 'kiosk', 'mom'))))
+# print(list(filter(lambda slovo: slovo == slovo[::-1], ('madam', 'fire', 'tomato', 'book', 'kiosk', 'mom'))))
+
+
+# Домашнее задание №16
+#
+# def avg(fn):
+#     def wrap(*arg):
+#         a = ""
+#         for i in arg:
+#             a += str(i) + ", "  # "2, 3, 3, 4, "
+#         print("Среднее арифметическое:", a[:-2], "=", fn(*arg) / len(arg))
+#
+#     return wrap
+#
+#
+# @avg
+# def summa(*args):  # (2, 3, 3, 4)
+#     print("Сумма чисел:", ", ".join(map(str, args)), "=", sum(args))
+#     return sum(args)
+#
+#
+# summa(2, 3, 3, 4)
+
+
+# Домашнее задание №17
+#
+# def fio():
+#     names = input("Введите Фамилию, Имя, Отчество: ").split()
+#     return f'{names[0]} {names[1][0]}.{names[2][0]}.'.title()
+#
+#
+# print(fio())
+
+
+# Домашнее задание №18
+
+import re
+
+s = "+ 7 499 456-45-78, +74994564578, 7 (499) 456 45 78, 74994564578"
+pattern = r'\+?7\d{10}'
+
+print(re.findall(pattern, s))
+
+# Домашнее задание №19
+
+
+
+# Домашнее задание №20
