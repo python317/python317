@@ -220,7 +220,7 @@
 #
 # def avg(fn):
 #     def wrap(*arg):
-#         a = ""
+#         a = ""16
 #         for i in arg:
 #             a += str(i) + ", "  # "2, 3, 3, 4, "
 #         print("Среднее арифметическое:", a[:-2], "=", fn(*arg) / len(arg))
@@ -249,15 +249,20 @@
 
 # Домашнее задание №18
 
-import re
+# import re
+#
+# s = "+ 7 499 456-45-78, +74994564578, 7 (499) 456 45 78, 74994564578"
+# pattern = r'\+?7\d{10}'
+#
+# print(re.findall(pattern, s))
 
-s = "+ 7 499 456-45-78, +74994564578, 7 (499) 456 45 78, 74994564578"
-pattern = r'\+?7\d{10}'
-
-print(re.findall(pattern, s))
 
 # Домашнее задание №19
 
+import re
 
+s = "my-p@ssw0rd"
+reg = r"^[a-zA-Z0-9_@-]{6,18}$"
+print(re.findall(reg, s))
 
 # Домашнее задание №20
