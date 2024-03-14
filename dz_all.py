@@ -259,10 +259,29 @@
 
 # Домашнее задание №19
 
-import re
-
-s = "my-p@ssw0rd"
-reg = r"^[a-zA-Z0-9_@-]{6,18}$"
-print(re.findall(reg, s))
+# import re
+#
+# s = "my-p@ssw0rd"
+# reg = r"^[a-zA-Z0-9_@-]{6,18}$"
+# print(re.findall(reg, s))
 
 # Домашнее задание №20
+
+def negative_numbers(n):
+    if not n:
+        return 0
+    count = 0
+    if n[0] < 0:
+        count += 1
+    return count + negative_numbers(n[1:])
+
+
+lst = [-2, 3, 8, -11, -4, 6]
+print(negative_numbers(lst))
+
+
+
+
+
+
+
