@@ -292,43 +292,96 @@
 
 
 # Домашнее задание №22
-
-class Car:
-
-    def __init__(self, model_name, year_of_release, manufacturer, engine_power, colour, price):
-        self.model_name = model_name
-        self.year_of_release = year_of_release
-        self.manufacturer = manufacturer
-        self.engine_power = engine_power
-        self.colour = colour
-        self.price = price
-
-    def printer(self):
-        print(self.model_name)
-        print(self.year_of_release)
-        print(self.manufacturer)
-        print(self.engine_power)
-        print(self.colour)
-        print(self.price)
-
-
-def __init__(self, model_name, year_of_release, manufacturer, engine_power, colour, price):
-    def set_model_name(self, model_name):
-        self.model_name = model_name
-
-    def get_model_name(self):
-        return self.model_name
-
-    def set_year_of_release(self, year_of_release):
-        self.year_of_release = year_of_release
-
-    def get_year_of_release(self):
-        return self.year_of_release
-
-
-if __name__ == '__main__':
-    auto = Car("X7 M50i", "2021", "BMW", "530 л.с.", "white", "10790000")
-    auto.printer()
+# 
+# class Car:
+#
+#     def __init__(self, model_name, year_of_release, manufacturer, engine_power, colour, price):
+#         self.model_name = model_name
+#         self.year_of_release = year_of_release
+#         self.manufacturer = manufacturer
+#         self.engine_power = engine_power
+#         self.colour = colour
+#         self.price = price
+#
+#     def printer(self):
+#         print(self.model_name)
+#         print(self.year_of_release)
+#         print(self.manufacturer)
+#         print(self.engine_power)
+#         print(self.colour)
+#         print(self.price)
+#
+#
+# def __init__(self, model_name, year_of_release, manufacturer, engine_power, colour, price):
+#     def set_model_name(self, model_name):
+#         self.model_name = model_name
+#
+#     def get_model_name(self):
+#         return self.model_name
+#
+#     def set_year_of_release(self, year_of_release):
+#         self.year_of_release = year_of_release
+#
+#     def get_year_of_release(self):
+#         return self.year_of_release
+#
+#
+# if __name__ == '__main__':
+#     auto = Car("X7 M50i", "2021", "BMW", "530 л.с.", "white", "10790000")
+#     auto.printer()
 
 
 # Домашнее задание №23
+
+class Person:
+    def __init__(self, name: str, old: float) -> None:
+        self.__name = name
+        self.__old = old
+
+    @staticmethod
+    def __check_value(value, types) -> bool:
+        return isinstance(value, types)
+
+    @property
+    def old(self) -> float:
+        return self.__old
+
+    @old.setter
+    def old(self, value: float) -> None:
+        if self.__check_value(value, (int, float)):
+            self.__old = value
+
+    @old.deleter
+    def old(self) -> None:
+        del self.__old
+
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, value: str) -> None:
+        if self.__check_value(value, str):
+            self.__name = value
+
+    @name.deleter
+    def name(self) -> None:
+        del self.__name
+
+
+pers1 = Person("Irina", 26)
+print(pers1.__dict__)
+pers1.name = "Igor"
+pers1.old = 31
+print(pers1.name)
+print(pers1.old)
+pers1.old = 26
+del pers1.name
+print(pers1.__dict__)
+
+
+
+
+
+
+
