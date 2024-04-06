@@ -333,55 +333,369 @@
 
 # Домашнее задание №23
 
-class Person:
-    def __init__(self, name: str, old: float) -> None:
-        self.__name = name
-        self.__old = old
+# class Person:
+#     def __init__(self, name: str, old: float) -> None:
+#         self.__name = name
+#         self.__old = old
+#
+#     @staticmethod
+#     def __check_value(value, types) -> bool:
+#         return isinstance(value, types)
+#
+#     @property
+#     def old(self) -> float:
+#         return self.__old
+#
+#     @old.setter
+#     def old(self, value: float) -> None:
+#         if self.__check_value(value, (int, float)):
+#             self.__old = value
+#
+#     @old.deleter
+#     def old(self) -> None:
+#         del self.__old
+#
+#     @property
+#     def name(self) -> str:
+#         return self.__name
+#
+#     @name.setter
+#     def name(self, value: str) -> None:
+#         if self.__check_value(value, str):
+#             self.__name = value
+#
+#     @name.deleter
+#     def name(self) -> None:
+#         del self.__name
+#
+#
+# pers1 = Person("Irina", 26)
+# print(pers1.__dict__)
+# pers1.name = "Igor"
+# pers1.old = 31
+# print(pers1.name)
+# print(pers1.old)
+# pers1.old = 26
+# del pers1.name
+# print(pers1.__dict__)
+
+
+# Домашнее задание №24
+#
+# class AreaCalculator:
+#     # Счетчики количества вызовов методов
+#     triangle_count: int = 0
+#     rectangle_count: int = 0
+#     square_count: int = 0
+#
+#     @staticmethod
+#     def calculate_triangle_area(a: float, b: float, c: float = None, method: str = 'основание_высота') -> float:
+#         """
+#         Вычисляет площадь треугольника.
+#         """
+#         # Увеличиваем счетчик вызовов метода для треугольника
+#         AreaCalculator.triangle_count += 1
+#         if method == 'основание_высота':
+#             if c is not None:
+#                 raise ValueError("Для метода 'основание_высота' не должно быть передано третье значение")
+#             # Вычисляем площадь треугольника через основание и высоту
+#             return 0.5 * a * b
+#         elif method == 'Герон':
+#             if c is None:
+#                 raise ValueError("Для метода 'Герон' должно быть передано три значения")
+#             # Вычисляем полупериметр
+#             semi_perimeter = (a + b + c) / 2
+#             # Вычисляем площадь треугольника по формуле Герона
+#             return (semi_perimeter * (semi_perimeter - a) * (semi_perimeter - b) * (semi_perimeter - c)) ** 0.5
+#         else:
+#             raise ValueError("Неверный метод для вычисления площади треугольника")
+#
+#     @staticmethod
+#     def calculate_rectangle_area(length: float, width: float) -> float:
+#         """
+#         Вычисляет площадь прямоугольника.
+#         """
+#         # Увеличиваем счетчик вызовов метода для прямоугольника
+#         AreaCalculator.rectangle_count += 1
+#         # Вычисляем площадь прямоугольника
+#         return length * width
+#
+#     @staticmethod
+#     def calculate_square_area(side: float) -> float:
+#         """
+#         Вычисляет площадь квадрата.
+#         """
+#         # Увеличиваем счетчик вызовов метода для квадрата
+#         AreaCalculator.square_count += 1
+#         # Вычисляем площадь квадрата
+#         return side ** 2
+#
+#     @staticmethod
+#     def get_total_count() -> int:
+#         """
+#         Получает общее количество вызовов всех методов.
+#         """
+#         # Возвращает общее количество вызовов всех методов
+#         return AreaCalculator.triangle_count + AreaCalculator.rectangle_count + AreaCalculator.square_count
+#
+#
+# # Пример использования:
+# triangle_area_heron = AreaCalculator.calculate_triangle_area(3, 4, 5, method='Герон')
+# print(f"Площадь треугольника по формуле Герона (3, 4, 5): {triangle_area_heron}")
+#
+# triangle_area_base_height = AreaCalculator.calculate_triangle_area(6, 7, method='основание_высота')
+# print(f"Площадь треугольника через основание и высоту (6, 7): {triangle_area_base_height}")
+#
+# square_area = AreaCalculator.calculate_square_area(7)
+# print(f"Площадь квадрата (7): {square_area}")
+#
+# rectangle_area = AreaCalculator.calculate_rectangle_area(2, 6)
+# print(f"Площадь прямоугольника (2, 6): {rectangle_area}")
+#
+# print("Количество подсчетов площади:", AreaCalculator.get_total_count())
+
+
+# Домашнее задание №25
+
+# import math
+#
+#
+# class Pair:
+#     def __init__(self, a: float, b: float):
+#         self.A = a  # Первый катет
+#         self.B = b  # Второй катет
+#
+#     def change_numbers(self, a: float, b: float) -> None:
+#         """Метод для изменения значений катетов A и B."""
+#         self.A = a
+#         self.B = b
+#
+#     def product(self) -> float:
+#         """Метод для вычисления произведения катетов A и B."""
+#         return self.A * self.B
+#
+#     def sum(self) -> float:
+#         """Метод для вычисления суммы катетов A и B."""
+#         return self.A + self.B
+#
+#
+# class RightTriangle(Pair):
+#     def __init__(self, a: float, b: float):
+#         super().__init__(a, b)
+#
+#     def hypotenuse(self) -> float:
+#         """Метод для вычисления длины первой гипотенузы прямоугольного треугольника."""
+#         return math.sqrt(self.A ** 2 + self.B ** 2)
+#
+#     def second_hypotenuse(self) -> float:
+#         """Метод для вычисления длины второй гипотенузы прямоугольного треугольника."""
+#         return math.sqrt(self.A ** 2 + self.B ** 2 + (2 * self.A * self.B))
+#
+#     def area(self) -> float:
+#         """Метод для вычисления площади прямоугольного треугольника."""
+#         return 0.5 * self.A * self.B
+#
+#
+# # Пример использования классов
+# pair1 = Pair(5, 8)
+# triangle1 = RightTriangle(pair1.A, pair1.B)
+#
+# # Вывод информации о прямоугольном треугольнике
+# print("Гипотенуза △ABC:", "{:.2f}".format(triangle1.hypotenuse()))
+# print("Прямоугольный треугольник △ABC ({}, {}, {:.2f})".format(triangle1.A, triangle1.B, triangle1.hypotenuse()))
+# print("Площадь △ABC:", "{:.1f}".format(triangle1.area()))
+# print()
+# print("Сумма:", pair1.sum())
+# print("Произведение:", pair1.product())
+# print()
+#
+# pair2 = Pair(15, 20)
+# triangle2 = RightTriangle(pair2.A, pair2.B)
+#
+# # Вывод информации о прямоугольном треугольнике
+# print("Гипотенуза △ABC:", "{:.2f}".format(triangle2.hypotenuse()))
+# print("Гипотенуза △ABC:", "{:.2f}".format(triangle2.second_hypotenuse()))
+# print("Сумма:", pair2.sum())
+# print("Произведение:", pair2.product())
+# print("Площадь △ABC:", "{:.1f}".format(triangle2.area()))
+# print()
+
+
+# Домашнее задание №26
+#
+# class Student:
+#     """Класс, представляющий студента."""
+#
+#     def __init__(self, name: str, laptop: 'Laptop'):
+#         """Инициализирует объект студента."""
+#         self.name = name
+#         self.laptop = laptop
+#
+#     def __str__(self) -> str:
+#         """Возвращает строковое представление объекта студента."""
+#         return f"{self.name} => {self.laptop.model}, {self.laptop.processor}, {self.laptop.memory}"
+#
+#     class Laptop:
+#         """Класс, представляющий ноутбук."""
+#
+#         def __init__(self, model: str, processor: str, memory: int):
+#             """Инициализирует объект ноутбука."""
+#             self.model = model
+#             self.processor = processor
+#             self.memory = memory
+#
+#
+# laptop1 = Student.Laptop("HP", "i7", 16)
+# student1 = Student("Roman", laptop1)
+#
+# laptop2 = Student.Laptop("HP", "i7", 16)
+# student2 = Student("Vladimir", laptop2)
+#
+# print(student1)
+# print(student2)
+
+
+# Домашнее задание №27
+
+class Clock:
+    __DAY = 86400
+
+    def __init__(self, seconds: int):
+        if not isinstance(seconds, int):
+            raise TypeError("Секунды должны быть целым числом")
+        self.seconds = seconds % self.__DAY
+
+    def get_format_time(self):
+        s = self.seconds % 60
+        m = (self.seconds // 60) % 60
+        h = (self.seconds // 3600) % 24
+        return f"{Clock.__get_formatted_num(h)}:{Clock.__get_formatted_num(m)}:{Clock.__get_formatted_num(s)}"
 
     @staticmethod
-    def __check_value(value, types) -> bool:
-        return isinstance(value, types)
+    def __get_formatted_num(num):
+        return str(num) if num > 9 else f"0{num}"
 
-    @property
-    def old(self) -> float:
-        return self.__old
+    def __add__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError("Правый операнд должен быть типом Clock")
+        return Clock(self.seconds + other.seconds)
 
-    @old.setter
-    def old(self, value: float) -> None:
-        if self.__check_value(value, (int, float)):
-            self.__old = value
+    def __eq__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError("Правый операнд должен быть типом Clock")
+        return self.seconds == other.seconds
 
-    @old.deleter
-    def old(self) -> None:
-        del self.__old
+    def __ne__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError("Правый операнд должен быть типом Clock")
+        return self.seconds != other.seconds
 
-    @property
-    def name(self) -> str:
-        return self.__name
+    def __sub__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return Clock((self.seconds - other.seconds) % self.__DAY)
 
-    @name.setter
-    def name(self, value: str) -> None:
-        if self.__check_value(value, str):
-            self.__name = value
+    def __mul__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return Clock((self.seconds * other.seconds) % self.__DAY)
 
-    @name.deleter
-    def name(self) -> None:
-        del self.__name
+    def __floordiv__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return Clock((self.seconds // other.seconds) % self.__DAY)
+
+    def __mod__(self, other: 'Clock') -> 'Clock':
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return Clock((self.seconds % other.seconds) % self.__DAY)
+
+    def __iadd__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError("Правый операнд должен быть типом Clock")
+        self.seconds += other.seconds
+        self.seconds %= self.__DAY
+        return self
+
+    def __isub__(self, other):
+        if not isinstance(other, Clock):
+            raise ArithmeticError("Правый операнд должен быть типом Clock")
+        self.seconds -= other.seconds
+        self.seconds %= self.__DAY
+        return self
+
+    def __imul__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        self.seconds *= other.seconds
+        self.seconds %= self.__DAY
+        return self
+
+    def __ifloordiv__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        self.seconds //= other.seconds
+        self.seconds %= self.__DAY
+        return self
+
+    def __imod__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        self.seconds %= other.seconds
+        self.seconds %= self.__DAY
+        return self
+
+    def __lt__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return self.seconds < other.seconds
+
+    def __le__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return self.seconds <= other.seconds
+
+    def __gt__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return self.seconds > other.seconds
+
+    def __ge__(self, other):
+        if not isinstance(other, Clock):
+            raise TypeError("Правый операнд должен быть типом Clock")
+        return self.seconds >= other.seconds
 
 
-pers1 = Person("Irina", 26)
-print(pers1.__dict__)
-pers1.name = "Igor"
-pers1.old = 31
-print(pers1.name)
-print(pers1.old)
-pers1.old = 26
-del pers1.name
-print(pers1.__dict__)
+c1 = Clock(100)
+c2 = Clock(200)
+print(c1.get_format_time())
+print(c2.get_format_time())
 
+# Результаты операций
+print("Сложение:", (c1 + c2).get_format_time())
+print("Вычитание:", (c1 - c2).get_format_time())
+print("Умножение:", (c1 * c2).get_format_time())
+print("Целочисленное деление:", (c1 // c2).get_format_time())
+print("Остаток от деления:", (c1 % c2).get_format_time())
 
+# Изменение текущего объекта
+c1 += c2
+print("Изменение текущего объекта (сложение):", c1.get_format_time())
+c1 -= c2
+print("Изменение текущего объекта (вычитание):", c1.get_format_time())
+c1 *= c2
+print("Изменение текущего объекта (умножение):", c1.get_format_time())
+c1 //= c2
+print("Изменение текущего объекта (целочисленное деление):", c1.get_format_time())
+c1 %= c2
+print("Изменение текущего объекта (остаток от деления):", c1.get_format_time())
 
-
-
-
-
+# Сравнение
+if c1 < c2:
+    print("Первое время меньше второго")
+elif c1 <= c2:
+    print("Первое время меньше или равно второму")
+elif c1 > c2:
+    print("Первое время больше второго")
+elif c1 >= c2:
+    print("Первое время больше или равно второму")
